@@ -7,12 +7,12 @@
           <h2 class="login-title"><i class="fas fa-user-circle"></i> Login</h2>
           <div class="form-control">
             <i class="fas fa-user icon"></i>
-            <input type="text" name="userName" placeholder="Username" id="username"
+            <input type="text" name="userName" [(ngModel)]="loginObj.username" placeholder="Username" id="username"
               required>
           </div>
           <div class="form-control">
             <i class="fas fa-lock icon"></i>
-            <input type="password" name="password" placeholder="Password" id="password">
+            <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password" id="password">
           </div>
           <div class="remember-me">
             <input type="checkbox" id="rememberMe" class="checkbox-input">
@@ -25,7 +25,7 @@
             <i class="fab fa-facebook-f social-icon"></i>
             <i class="fab fa-twitter social-icon"></i>
           </div>
-          <button type="button">Login</button>
+          <button type="button" (click)="onLogin()">Login</button>
         </form>
       </div>
     </div>
