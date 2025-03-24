@@ -1,11 +1,11 @@
 <div class="row">
-  <div class="col-8">
+  <div [ngClass]="isSidePanelVisible? 'col-8' : 'col-12'" class="col-8">
     <div class="card">
       <div class="card-header bg-primary">
         <div class="row">
           <div class="col-6">Product List</div>
           <div class="col-6 text-end">
-            <button class="btn btn-sm btn-success">
+            <button class="btn btn-sm btn-success" (click)="openSidePanel()">
               Add New Product
             </button>
           </div>
@@ -13,18 +13,52 @@
       </div>
 
       <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <div class="card" style="width: 400px">
+              <img src="ad" alt="" class="card-img-top">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">lorem12</p>
+                <a href="#" class="btn btn-primary">See more</a>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-3">
+            <div class="card" style="width: 400px">
+              <img src="ad" alt="" class="card-img-top">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">lorem12</p>
+                <a href="#" class="btn btn-primary">See more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="card" style="width: 400px">
+              <img src="ad" alt="" class="card-img-top">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">lorem12</p>
+                <a href="#" class="btn btn-primary">See more</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 
-  <div class="col-4">
+  <div class="col-4" *ngIf="isSidePanelVisible">
     <div class="card">
       <div class="card-header bg-primary">
         <div class="row">
           <div class="col-6">New Product</div>
           <div class="col-6 text-end">
-            <button class="btn btn-sm btn-success">
+            <button class="btn btn-sm btn-success" (click)="closeSidePanel()">
               Close
             </button>
           </div>
@@ -32,7 +66,51 @@
       </div>
 
       <div class="card-body">
-
+        <div class="row">
+          <div class="row">
+            <div class="col-12">
+              <label for="productSku">Product SKU:</label>
+              <input type="text" class="form-control" id="productSku" [(ngModel)]="productObj.productSku">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label for="productName">Product Name:</label>
+              <input type="text" class="form-control" id="productName" [(ngModel)]="productObj.productName">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label for="productPrice">Product Price:</label>
+              <input type="number" class="form-control" id="productPrice" [(ngModel)]="productObj.productPrice">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label for="productShortName">Product Short Name:</label>
+              <input type="text" class="form-control" id="productShortName" [(ngModel)]="productObj.productShortName">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label for="productDescription">Product Description:</label>
+              <input type="text" class="form-control" id="productDescription"
+                     [(ngModel)]="productObj.productDescription">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label for="deliveryTimeSpan">Delivery Time Span:</label>
+              <input type="text" class="form-control" id="deliveryTimeSpan" [(ngModel)]="productObj.deliveryTimeSpan">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label for="productImageUrl">Product Image URL:</label>
+              <input type="text" class="form-control" id="productImageUrl" [(ngModel)]="productObj.productImageUrl">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
