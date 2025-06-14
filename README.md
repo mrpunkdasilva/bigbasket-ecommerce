@@ -1,59 +1,152 @@
-# BigbasketEccomerce
+# BigBasket E-commerce
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+Um aplicativo de e-commerce desenvolvido com Angular 19, oferecendo uma experiência de compra online completa com áreas para clientes e administradores.
 
-## Development server
+## 📋 Índice
 
-To start a local development server, run:
+- [Visão Geral](#visão-geral)
+- [Tecnologias](#tecnologias)
+- [Requisitos](#requisitos)
+- [Instalação](#instalação)
+- [Executando o Projeto](#executando-o-projeto)
+  - [Desenvolvimento](#desenvolvimento)
+  - [Produção](#produção)
+  - [Docker](#docker)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Testes](#testes)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+
+## 🔍 Visão Geral
+
+BigBasket é uma plataforma de e-commerce completa que permite aos usuários navegar por produtos, adicionar itens ao carrinho e finalizar compras. O sistema também inclui um painel administrativo para gerenciamento de produtos, pedidos e usuários.
+
+## 💻 Tecnologias
+
+- **Frontend**: Angular 19
+- **Estilização**: CSS
+- **Gerenciamento de Estado**: RxJS
+- **Banco de Dados**: MongoDB
+- **Testes**: Jasmine e Karma
+
+## 📋 Requisitos
+
+- Node.js (v18 ou superior)
+- npm (v9 ou superior)
+- Angular CLI (v19.2.4)
+
+## 🚀 Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/bigbasket-ecommerce.git
+   cd bigbasket-ecommerce
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+## ⚙️ Executando o Projeto
+
+### Desenvolvimento
+
+Para iniciar o servidor de desenvolvimento:
+
+```bash
+npm start
+```
+
+ou
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse a aplicação em `http://localhost:4200/`.
 
-## Code scaffolding
+### Produção
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para compilar o projeto para produção:
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
-
-To build the project run:
+ou
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os arquivos de build serão armazenados no diretório `dist/`.
 
-## Running unit tests
+### Docker
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Para executar o projeto usando Docker Compose (recomendado):
+
+1. Inicie a aplicação e o banco de dados:
+   ```bash
+   docker-compose up -d
+   ```
+
+2. Acesse a aplicação em `http://localhost:8080/`.
+
+3. O MongoDB estará disponível em `localhost:27017`.
+
+4. Para parar os contêineres:
+   ```bash
+   docker compose down
+   ```
+
+Alternativamente, para executar apenas a aplicação sem o banco de dados:
+
+```bash
+docker build -t bigbasket-ecommerce .
+docker run -p 8080:80 bigbasket-ecommerce
+```
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/
+│   ├── pages/
+│   │   ├── admin/       # Componentes da área administrativa
+│   │   └── website/     # Componentes da área do cliente
+│   ├── app.component.*  # Componente principal
+│   ├── app.config.ts    # Configurações do Angular
+│   └── app.routes.ts    # Configuração de rotas
+├── assets/              # Recursos estáticos (imagens, fontes, etc.)
+├── index.html           # Página HTML principal
+└── main.ts              # Ponto de entrada da aplicação
+```
+
+## 🧪 Testes
+
+### Testes Unitários
+
+Para executar os testes unitários:
+
+```bash
+npm test
+```
+
+ou
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 🤝 Contribuição
 
-For end-to-end (e2e) testing, run:
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Faça commit das suas alterações (`git commit -m 'Adiciona nova feature'`)
+4. Faça push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
 
-```bash
-ng e2e
-```
+## 📄 Licença
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.

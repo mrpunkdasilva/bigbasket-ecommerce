@@ -1,0 +1,43 @@
+# Controle de versão
+.git
+.gitignore
+.github
+
+# Dependências
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build e cache
+/dist
+/.angular
+/.cache
+/.tmp
+
+# Ambiente
+.env*
+!.env.example
+
+# IDE e editores
+/.idea
+/.vscode
+*.swp
+*.swo
+*~
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Testes
+/coverage
+/e2e
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentação
+*.md
+!README.md
